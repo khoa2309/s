@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mặt Trăng Rung Lắc</title>
+    <title>Mặt Trăng Rung Lắc Pro Max</title>
     <style>
         * {
             margin: 0;
@@ -19,6 +20,7 @@
             align-items: center;
             overflow: hidden;
             position: relative;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
         }
 
         .stars {
@@ -32,127 +34,411 @@
             position: absolute;
             background: white;
             border-radius: 50%;
-            animation: twinkle 3s infinite;
+            animation: twinkle 3s infinite, falling 8s linear infinite;
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
         }
 
         .moon-container {
             position: relative;
-            animation: violentShake 0.15s infinite;
+            animation: crazyShake 0.1s infinite, spinBounce 2s ease-in-out infinite;
+            transform-origin: center;
         }
 
-        @keyframes violentShake {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            10% { transform: translate(-8px, -6px) rotate(-2deg); }
-            20% { transform: translate(7px, 5px) rotate(1.5deg); }
-            30% { transform: translate(-6px, 8px) rotate(-1deg); }
-            40% { transform: translate(9px, -7px) rotate(2deg); }
-            50% { transform: translate(-7px, 6px) rotate(-1.5deg); }
-            60% { transform: translate(8px, -8px) rotate(1deg); }
-            70% { transform: translate(-9px, 7px) rotate(-2deg); }
-            80% { transform: translate(6px, -5px) rotate(1.5deg); }
-            90% { transform: translate(-8px, 8px) rotate(-1deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
+        @keyframes crazyShake {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            10% {
+                transform: translate(-15px, -12px) rotate(-5deg) scale(1.05);
+            }
+
+            20% {
+                transform: translate(12px, 10px) rotate(4deg) scale(0.95);
+            }
+
+            30% {
+                transform: translate(-10px, 15px) rotate(-3deg) scale(1.08);
+            }
+
+            40% {
+                transform: translate(18px, -14px) rotate(6deg) scale(0.92);
+            }
+
+            50% {
+                transform: translate(-14px, 11px) rotate(-4deg) scale(1.06);
+            }
+
+            60% {
+                transform: translate(16px, -16px) rotate(5deg) scale(0.94);
+            }
+
+            70% {
+                transform: translate(-18px, 13px) rotate(-6deg) scale(1.07);
+            }
+
+            80% {
+                transform: translate(11px, -10px) rotate(3deg) scale(0.96);
+            }
+
+            90% {
+                transform: translate(-16px, 17px) rotate(-5deg) scale(1.04);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes spinBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+
+            50% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-30px) rotate(-10deg);
+            }
         }
 
         .moon {
             width: 250px;
             height: 250px;
             position: relative;
-            filter: drop-shadow(0 0 40px rgba(255, 255, 200, 0.8));
+            filter: drop-shadow(0 0 60px rgba(255, 255, 0, 1)) drop-shadow(0 0 100px rgba(255, 200, 0, 0.8));
+            animation: colorPulse 1s infinite;
+        }
+
+        @keyframes colorPulse {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 60px rgba(255, 255, 0, 1)) drop-shadow(0 0 100px rgba(255, 200, 0, 0.8));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 80px rgba(255, 100, 0, 1)) drop-shadow(0 0 120px rgba(255, 0, 0, 0.8));
+            }
         }
 
         .moon svg {
             width: 100%;
             height: 100%;
+            animation: rotate360 3s linear infinite;
+        }
+
+        @keyframes rotate360 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .title {
             position: absolute;
-            top: 10%;
+            top: 8%;
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
-            font-family: 'Arial', sans-serif;
-            font-size: 2.5em;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            animation: titleShake 0.2s infinite;
+            font-size: 2.8em;
+            font-weight: bold;
+            text-shadow: 0 0 30px rgba(255, 255, 0, 1),
+                0 0 60px rgba(255, 200, 0, 0.8),
+                3px 3px 0 #ff00ff,
+                -3px -3px 0 #00ffff;
+            animation: titleCrazy 0.15s infinite, rainbow 2s linear infinite;
         }
 
-        @keyframes titleShake {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            25% { transform: translateX(-48%) translateY(-2px); }
-            75% { transform: translateX(-52%) translateY(2px); }
+        @keyframes titleCrazy {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(-48%) translateY(-5px) rotate(-2deg) scale(1.1);
+            }
+
+            50% {
+                transform: translateX(-52%) translateY(5px) rotate(2deg) scale(0.9);
+            }
+
+            75% {
+                transform: translateX(-49%) translateY(-3px) rotate(-1deg) scale(1.05);
+            }
+        }
+
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
         }
 
         .warning {
             position: absolute;
-            bottom: 15%;
+            bottom: 12%;
             left: 50%;
             transform: translateX(-50%);
             color: #ff6b6b;
-            font-family: 'Arial', sans-serif;
-            font-size: 1.2em;
-            text-shadow: 0 0 10px rgba(255, 107, 107, 0.8);
-            animation: blink 0.5s infinite;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 1),
+                0 0 40px rgba(255, 107, 107, 0.8),
+                2px 2px 0 #ffffff;
+            animation: warningShake 0.1s infinite, blink 0.3s infinite;
+            padding: 10px 20px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 3px solid #ff0000;
+            border-radius: 10px;
+        }
+
+        @keyframes warningShake {
+
+            0%,
+            100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(-48%) rotate(-3deg);
+            }
+
+            75% {
+                transform: translateX(-52%) rotate(3deg);
+            }
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            25%, 75% { opacity: 0.3; }
+
+            0%,
+            40%,
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+
+            20%,
+            60% {
+                opacity: 0.3;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        .effect-text {
+            position: absolute;
+            font-size: 3em;
+            font-weight: bold;
+            animation: explode 1.5s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .effect-text:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            color: #ff00ff;
+            animation-delay: 0s;
+        }
+
+        .effect-text:nth-child(2) {
+            top: 25%;
+            right: 10%;
+            color: #00ffff;
+            animation-delay: 0.3s;
+        }
+
+        .effect-text:nth-child(3) {
+            bottom: 25%;
+            left: 15%;
+            color: #ffff00;
+            animation-delay: 0.6s;
+        }
+
+        .effect-text:nth-child(4) {
+            bottom: 30%;
+            right: 15%;
+            color: #00ff00;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffff00;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 1);
+            animation: slide 2s ease-in-out infinite;
+        }
+
+        @keyframes slide {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateX(-100px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(-50%) translateX(100px);
+                opacity: 1;
+            }
+        }
+
+        .countdown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8em;
+            color: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+            animation: countPulse 1s infinite;
+            z-index: -1;
+        }
+
+        @keyframes countPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.3;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="stars" id="stars"></div>
-    
-    <h1 class="title">🌙 MẶT TRĂNG RUNG LẮC 🌙</h1>
-    
+
+    <h1 class="title">🌙 MẶT TRĂNG ĐỘNG ĐẤT 10 RICHTER 🌙</h1>
+    <div class="subtitle">⚡ BẢN NÂNG CẤP PRO MAX ULTRA PLUS ⚡</div>
+
+    <div class="effect-text">💥</div>
+    <div class="effect-text">⚡</div>
+    <div class="effect-text">🔥</div>
+    <div class="effect-text">💫</div>
+
+    <div class="countdown" id="countdown">BOOM</div>
+
     <div class="moon-container">
         <div class="moon">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <!-- Crescent moon shape -->
                 <defs>
                     <radialGradient id="moonGradient" cx="30%" cy="30%">
                         <stop offset="0%" style="stop-color:#fffef0;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#f4e4c1;stop-opacity:1" />
                     </radialGradient>
                 </defs>
-                
-                <!-- Main moon circle -->
+
                 <circle cx="100" cy="100" r="80" fill="url(#moonGradient)" />
-                
-                <!-- Dark circle to create crescent -->
                 <circle cx="130" cy="100" r="70" fill="#0a0e27" />
-                
-                <!-- Craters -->
-                <circle cx="70" cy="80" r="12" fill="#e8d4a8" opacity="0.4" />
-                <circle cx="85" cy="110" r="8" fill="#e8d4a8" opacity="0.3" />
-                <circle cx="60" cy="120" r="10" fill="#e8d4a8" opacity="0.35" />
-                <circle cx="75" cy="65" r="6" fill="#e8d4a8" opacity="0.4" />
+
+                <!-- Shocked face -->
+                <circle cx="70" cy="85" r="8" fill="#000000" />
+                <circle cx="90" cy="85" r="8" fill="#000000" />
+                <ellipse cx="80" cy="105" rx="15" ry="20" fill="#000000" />
+
+                <!-- Sweat drops -->
+                <ellipse cx="60" cy="95" rx="4" ry="6" fill="#4da6ff" opacity="0.7">
+                    <animate attributeName="opacity" values="0.7;0;0.7" dur="0.5s" repeatCount="indefinite" />
+                </ellipse>
             </svg>
         </div>
     </div>
-    
-    <div class="warning">⚠️ CẢNH BÁO: ĐỘNG ĐẤT MẶT TRĂNG! ⚠️</div>
+
+    <div class="warning">
+        🚨 KHẨN CẤP: MẶT TRĂNG SẮP TÉ XUỐNG ĐẤT RỒI! 🚨
+    </div>
 
     <script>
-        // Create stars
         const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 200; i++) {
             const star = document.createElement('div');
             star.className = 'star';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
+            const size = Math.random() * 4 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
             star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.top = -10 + '%';
+            star.style.animationDelay = Math.random() * 8 + 's';
+            star.style.animationDuration = (Math.random() * 5 + 8) + 's';
             starsContainer.appendChild(star);
         }
+
+        // Random countdown text
+        const countdownTexts = ['BOOM', 'BANG', 'POW', 'CRASH', 'KABOOM', 'ZAP'];
+        const countdownEl = document.getElementById('countdown');
+
+        setInterval(() => {
+            countdownEl.textContent = countdownTexts[Math.floor(Math.random() * countdownTexts.length)];
+        }, 1000);
+
+        // Screen shake effect
+        let shakeInterval = setInterval(() => {
+            document.body.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+        }, 50);
     </script>
 </body>
+
 </html>
