@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mặt Trăng Rung Lắc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #0a0e27 0%, #1a1442 50%, #2d1b69 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .moon-container {
+            position: relative;
+            animation: violentShake 0.15s infinite;
+        }
+
+        @keyframes violentShake {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-8px, -6px) rotate(-2deg); }
+            20% { transform: translate(7px, 5px) rotate(1.5deg); }
+            30% { transform: translate(-6px, 8px) rotate(-1deg); }
+            40% { transform: translate(9px, -7px) rotate(2deg); }
+            50% { transform: translate(-7px, 6px) rotate(-1.5deg); }
+            60% { transform: translate(8px, -8px) rotate(1deg); }
+            70% { transform: translate(-9px, 7px) rotate(-2deg); }
+            80% { transform: translate(6px, -5px) rotate(1.5deg); }
+            90% { transform: translate(-8px, 8px) rotate(-1deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .moon {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            filter: drop-shadow(0 0 40px rgba(255, 255, 200, 0.8));
+        }
+
+        .moon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: titleShake 0.2s infinite;
+        }
+
+        @keyframes titleShake {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            25% { transform: translateX(-48%) translateY(-2px); }
+            75% { transform: translateX(-52%) translateY(2px); }
+        }
+
+        .warning {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff6b6b;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.8);
+            animation: blink 0.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            25%, 75% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <h1 class="title">🌙 MẶT TRĂNG RUNG LẮC 🌙</h1>
+    
+    <div class="moon-container">
+        <div class="moon">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Crescent moon shape -->
+                <defs>
+                    <radialGradient id="moonGradient" cx="30%" cy="30%">
+                        <stop offset="0%" style="stop-color:#fffef0;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f4e4c1;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Main moon circle -->
+                <circle cx="100" cy="100" r="80" fill="url(#moonGradient)" />
+                
+                <!-- Dark circle to create crescent -->
+                <circle cx="130" cy="100" r="70" fill="#0a0e27" />
+                
+                <!-- Craters -->
+                <circle cx="70" cy="80" r="12" fill="#e8d4a8" opacity="0.4" />
+                <circle cx="85" cy="110" r="8" fill="#e8d4a8" opacity="0.3" />
+                <circle cx="60" cy="120" r="10" fill="#e8d4a8" opacity="0.35" />
+                <circle cx="75" cy="65" r="6" fill="#e8d4a8" opacity="0.4" />
+            </svg>
+        </div>
+    </div>
+    
+    <div class="warning">⚠️ CẢNH BÁO: ĐỘNG ĐẤT MẶT TRĂNG! ⚠️</div>
+
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
