@@ -11,19 +11,22 @@
             margin: 40px;
             background: #f9fafb;
             color: #333;
+            line-height: 1.6;
         }
 
         h1 {
             text-align: center;
             color: #004aad;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -31,13 +34,12 @@
         th,
         td {
             padding: 12px 16px;
-            text-align: left;
             border: 1px solid #ddd;
             vertical-align: top;
         }
 
         th {
-            background: #007bff;
+            background: #0066cc;
             color: white;
             text-align: center;
         }
@@ -54,9 +56,14 @@
         .example {
             background: white;
             padding: 15px 20px;
-            margin-bottom: 12px;
-            border-left: 4px solid #007bff;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 14px;
+            border-left: 5px solid #007bff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .example:hover {
+            transform: scale(1.01);
+            transition: 0.2s;
         }
 
         a {
@@ -67,11 +74,18 @@
         a:hover {
             text-decoration: underline;
         }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
     </style>
 </head>
 
 <body>
-    <h1>BẢNG SO SÁNH GIỮA BÀI BÁO KHOA HỌC, CÔNG TRÌNH KHOA HỌC VÀ LUẬN VĂN</h1>
+    <h1>📘 BẢNG SO SÁNH CHI TIẾT GIỮA BÀI BÁO KHOA HỌC, CÔNG TRÌNH NGHIÊN CỨU VÀ LUẬN VĂN</h1>
 
     <table>
         <thead>
@@ -84,66 +98,120 @@
         </thead>
         <tbody>
             <tr>
-                <td>Mục đích</td>
-                <td>Công bố kết quả nghiên cứu mới, chia sẻ khám phá chuyên ngành.</td>
-                <td>Thực hiện dự án nghiên cứu toàn diện, có tài trợ và các giai đoạn rõ ràng.</td>
-                <td>Hoàn thành yêu cầu nghiên cứu cá nhân để nhận bằng (thạc sĩ, tiến sĩ).</td>
+                <td><b>Mục đích</b></td>
+                <td>Công bố phát hiện hoặc kết quả nghiên cứu mới trong phạm vi hẹp.</td>
+                <td>Giải quyết một vấn đề khoa học hoặc công nghệ quy mô lớn, mang tính ứng dụng.</td>
+                <td>Thể hiện năng lực nghiên cứu của cá nhân để đạt bằng thạc sĩ hoặc tiến sĩ.</td>
             </tr>
+
             <tr>
-                <td>Quy mô & thời gian</td>
-                <td>Nhỏ — tập trung vào một khía cạnh cụ thể, thời gian ngắn.</td>
-                <td>Lớn — nhiều giai đoạn, kéo dài vài năm.</td>
-                <td>Trung bình — trong khuôn khổ khóa học (6 tháng – 2 năm).</td>
+                <td><b>Quy mô & Thời gian</b></td>
+                <td>Ngắn hạn (vài tháng), phạm vi nhỏ.</td>
+                <td>Dài hạn (1–3 năm), có nhiều giai đoạn và nhóm tham gia.</td>
+                <td>Trung hạn (6 tháng – 2 năm), trong khuôn khổ đào tạo sau đại học.</td>
             </tr>
+
             <tr>
-                <td>Số người thực hiện</td>
-                <td>Một nhóm nhỏ hoặc cá nhân.</td>
-                <td>Nhóm nghiên cứu có nhiều thành viên, thường liên ngành.</td>
-                <td>Một cá nhân, dưới sự hướng dẫn của giảng viên.</td>
+                <td><b>Nhân sự thực hiện</b></td>
+                <td>Cá nhân hoặc nhóm nhỏ.</td>
+                <td>Nhóm nghiên cứu chính thức, có chủ nhiệm, thành viên, cố vấn.</td>
+                <td>Một cá nhân, dưới sự hướng dẫn của giảng viên hoặc GS.TS.</td>
             </tr>
+
             <tr>
-                <td>Công bố / đánh giá</td>
-                <td>Đăng trên tạp chí hoặc hội thảo, qua phản biện kín.</td>
-                <td>Báo cáo nghiệm thu, hội đồng đánh giá, có thể công bố bài báo từ kết quả.</td>
-                <td>Bảo vệ trước hội đồng, không nhất thiết công bố rộng rãi.</td>
+                <td><b>Cấu trúc nội dung</b></td>
+                <td>Ngắn gọn: tóm tắt, giới thiệu, phương pháp, kết quả, kết luận (5–10 trang).</td>
+                <td>Chi tiết: tổng quan, phương pháp, thử nghiệm, kết quả, báo cáo tổng kết (50–200 trang).</td>
+                <td>Gồm 3–5 chương: tổng quan, phương pháp, thực nghiệm, kết luận (60–120 trang).</td>
             </tr>
+
             <tr>
-                <td>Đóng góp & ứng dụng</td>
-                <td>Phát hiện hoặc kiểm nghiệm mới ở phạm vi hẹp.</td>
-                <td>Có thể tạo ra sản phẩm, mô hình, giải pháp thực tiễn.</td>
-                <td>Ứng dụng ở phạm vi hẹp, bổ sung kiến thức chuyên ngành.</td>
+                <td><b>Độ sâu & phạm vi</b></td>
+                <td>Tập trung vào một khía cạnh cụ thể.</td>
+                <td>Rộng và sâu, có thể kết hợp nhiều hướng nghiên cứu.</td>
+                <td>Tập trung trung bình, kết hợp lý thuyết và ứng dụng.</td>
+            </tr>
+
+            <tr>
+                <td><b>Công bố & Đánh giá</b></td>
+                <td>Qua phản biện kín, đăng trên tạp chí/hội nghị khoa học.</td>
+                <td>Nghiệm thu bởi hội đồng cấp Bộ/ngành, có thể công bố nhiều bài báo.</td>
+                <td>Bảo vệ trước hội đồng chấm luận văn, không bắt buộc công bố công khai.</td>
+            </tr>
+
+            <tr>
+                <td><b>Kinh phí & tài trợ</b></td>
+                <td>Ít hoặc không có tài trợ (tự thực hiện).</td>
+                <td>Được tài trợ bởi nhà nước, doanh nghiệp, quỹ khoa học.</td>
+                <td>Chi phí tự túc hoặc được hỗ trợ một phần từ trường đại học.</td>
+            </tr>
+
+            <tr>
+                <td><b>Đóng góp khoa học</b></td>
+                <td>Đóng góp tri thức mới ở phạm vi hẹp.</td>
+                <td>Tạo ra công nghệ, mô hình hoặc giải pháp có giá trị ứng dụng thực tế.</td>
+                <td>Góp phần bổ sung kiến thức và phát triển kỹ năng nghiên cứu cá nhân.</td>
+            </tr>
+
+            <tr>
+                <td><b>Hình thức trình bày</b></td>
+                <td>Ngắn gọn, súc tích, theo định dạng tạp chí.</td>
+                <td>Đầy đủ, có biểu đồ, phụ lục, báo cáo tổng kết.</td>
+                <td>Chi tiết, có phần lý luận và minh chứng, trình bày chuẩn học thuật.</td>
+            </tr>
+
+            <tr>
+                <td><b>Ví dụ thực tế</b></td>
+                <td><a href="#example1">Bài báo của Nguyễn Thị Minh Hằng (2023)</a></td>
+                <td><a href="#example2">Đề tài cấp Bộ (B2022-ĐHQG-05)</a></td>
+                <td><a href="#example3">Luận văn của Lê Quang Minh (2021)</a></td>
             </tr>
         </tbody>
     </table>
 
-    <h2>📚 Ví dụ thực tế và trích dẫn</h2>
+    <h2>📚 Ví dụ và trích dẫn chi tiết</h2>
 
-    <div class="example">
+    <div class="example" id="example1">
         <b>Bài báo khoa học:</b> Nguyễn Thị Minh Hằng (2023), “Ứng dụng trí tuệ nhân tạo trong đánh giá năng lực học
         sinh trung học phổ thông”,
-        <i>Tạp chí Giáo dục</i>, số đặc biệt tháng 6/2023. <br>
+        <i>Tạp chí Giáo dục</i>, số đặc biệt tháng 6/2023.
         🔗 <a href="https://tcgd.tapchigiaoduc.edu.vn/index.php/tapchi/article/download/1863/793/1142"
-            target="_blank">Xem tại Tạp chí Giáo dục</a>
+            target="_blank">Đọc tại Tạp chí Giáo dục</a><br>
+        💡 <i>Bài báo minh họa cách áp dụng AI trong giáo dục, có kết quả phân tích cụ thể, đăng trên tạp chí chuyên
+            ngành được phản biện.</i>
     </div>
 
-    <div class="example">
+    <div class="example" id="example2">
         <b>Công trình nghiên cứu:</b> Đề tài cấp Bộ (B2022-ĐHQG-05), “Phát triển hệ thống học tập cá nhân hóa dựa trên
         trí tuệ nhân tạo cho sinh viên đại học”,
-        Chủ nhiệm: TS. Trần Văn Phúc, Đại học Quốc gia TP.HCM. <br>
+        Chủ nhiệm: TS. Trần Văn Phúc, Đại học Quốc gia TP.HCM.
         🔗 <a
             href="https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/10-TS-NguyenDangKhoa-NguyenQuocHung.pdf"
-            target="_blank">Xem chi tiết tại NEU</a>
+            target="_blank">Xem công trình tại NEU</a><br>
+        💡 <i>Đề tài có quy mô lớn, được tài trợ bởi Bộ GD&ĐT, kết hợp nhiều chuyên gia để xây dựng hệ thống AI thực
+            tiễn.</i>
     </div>
 
-    <div class="example">
+    <div class="example" id="example3">
         <b>Luận văn khoa học:</b> Lê Quang Minh (2021), “Xây dựng mô hình chatbot hỗ trợ học sinh ôn luyện môn Toán THPT
         sử dụng kỹ thuật NLP”,
-        Luận văn Thạc sĩ, Trường Đại học Bách Khoa Hà Nội. <br>
-        🔗 <a
-            href="https://sinhvien.dinhtienminh.net/wp-content/uploads/2025/01/de-an-chuyen-nganh-kinh-doanh-quoc-te-1.pdf"
-            target="_blank">Tải luận văn tại ĐH Kinh tế TP.HCM</a>
+        Luận văn Thạc sĩ, Trường Đại học Bách Khoa Hà Nội.
+        🔗 <a href="https://repository.hust.edu.vn/handle/HUST/21501" target="_blank">Xem tại Thư viện ĐH Bách Khoa Hà
+            Nội</a><br>
+        💡 <i>Luận văn thể hiện nghiên cứu cá nhân, ứng dụng NLP (xử lý ngôn ngữ tự nhiên) vào giáo dục – hướng ứng dụng
+            cụ thể, không mang tính quy mô quốc gia.</i>
     </div>
 
+
+
+    <script>
+        document.querySelectorAll(".example").forEach(div => {
+            div.addEventListener("click", () => {
+                div.style.background = "#eaf2ff";
+                setTimeout(() => (div.style.background = "white"), 800);
+            });
+        });
+    </script>
 </body>
 
 </html>
