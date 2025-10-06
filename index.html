@@ -2,443 +2,148 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mặt Trăng Rung Lắc Pro Max</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng so sánh bài báo, công trình và luận văn khoa học</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            min-height: 100vh;
-            background: linear-gradient(to bottom, #0a0e27 0%, #1a1442 50%, #2d1b69 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            margin: 40px;
+            background: #f9fafb;
+            color: #333;
         }
 
-        .stars {
-            position: absolute;
+        h1 {
+            text-align: center;
+            color: #004aad;
+            margin-bottom: 20px;
+        }
+
+        table {
             width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
+            border-collapse: collapse;
             background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite, falling 8s linear infinite;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        @keyframes twinkle {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
-            }
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: top;
         }
 
-        @keyframes falling {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
+        th {
+            background: #007bff;
+            color: white;
+            text-align: center;
         }
 
-        .moon-container {
-            position: relative;
-            animation: crazyShake 0.1s infinite, spinBounce 2s ease-in-out infinite;
-            transform-origin: center;
+        tr:nth-child(even) {
+            background: #f2f6ff;
         }
 
-        @keyframes crazyShake {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-
-            10% {
-                transform: translate(-15px, -12px) rotate(-5deg) scale(1.05);
-            }
-
-            20% {
-                transform: translate(12px, 10px) rotate(4deg) scale(0.95);
-            }
-
-            30% {
-                transform: translate(-10px, 15px) rotate(-3deg) scale(1.08);
-            }
-
-            40% {
-                transform: translate(18px, -14px) rotate(6deg) scale(0.92);
-            }
-
-            50% {
-                transform: translate(-14px, 11px) rotate(-4deg) scale(1.06);
-            }
-
-            60% {
-                transform: translate(16px, -16px) rotate(5deg) scale(0.94);
-            }
-
-            70% {
-                transform: translate(-18px, 13px) rotate(-6deg) scale(1.07);
-            }
-
-            80% {
-                transform: translate(11px, -10px) rotate(3deg) scale(0.96);
-            }
-
-            90% {
-                transform: translate(-16px, 17px) rotate(-5deg) scale(1.04);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
+        h2 {
+            color: #004aad;
+            margin-top: 40px;
         }
 
-        @keyframes spinBounce {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            25% {
-                transform: translateY(-30px) rotate(10deg);
-            }
-
-            50% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            75% {
-                transform: translateY(-30px) rotate(-10deg);
-            }
+        .example {
+            background: white;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .moon {
-            width: 250px;
-            height: 250px;
-            position: relative;
-            filter: drop-shadow(0 0 60px rgba(255, 255, 0, 1)) drop-shadow(0 0 100px rgba(255, 200, 0, 0.8));
-            animation: colorPulse 1s infinite;
+        a {
+            color: #007bff;
+            text-decoration: none;
         }
 
-        @keyframes colorPulse {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 60px rgba(255, 255, 0, 1)) drop-shadow(0 0 100px rgba(255, 200, 0, 0.8));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 80px rgba(255, 100, 0, 1)) drop-shadow(0 0 120px rgba(255, 0, 0, 0.8));
-            }
-        }
-
-        .moon svg {
-            width: 100%;
-            height: 100%;
-            animation: rotate360 3s linear infinite;
-        }
-
-        @keyframes rotate360 {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .title {
-            position: absolute;
-            top: 8%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 2.8em;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(255, 255, 0, 1),
-                0 0 60px rgba(255, 200, 0, 0.8),
-                3px 3px 0 #ff00ff,
-                -3px -3px 0 #00ffff;
-            animation: titleCrazy 0.15s infinite, rainbow 2s linear infinite;
-        }
-
-        @keyframes titleCrazy {
-
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0) rotate(0deg);
-            }
-
-            25% {
-                transform: translateX(-48%) translateY(-5px) rotate(-2deg) scale(1.1);
-            }
-
-            50% {
-                transform: translateX(-52%) translateY(5px) rotate(2deg) scale(0.9);
-            }
-
-            75% {
-                transform: translateX(-49%) translateY(-3px) rotate(-1deg) scale(1.05);
-            }
-        }
-
-        @keyframes rainbow {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
-        .warning {
-            position: absolute;
-            bottom: 12%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ff6b6b;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 1),
-                0 0 40px rgba(255, 107, 107, 0.8),
-                2px 2px 0 #ffffff;
-            animation: warningShake 0.1s infinite, blink 0.3s infinite;
-            padding: 10px 20px;
-            background: rgba(255, 0, 0, 0.2);
-            border: 3px solid #ff0000;
-            border-radius: 10px;
-        }
-
-        @keyframes warningShake {
-
-            0%,
-            100% {
-                transform: translateX(-50%) rotate(0deg);
-            }
-
-            25% {
-                transform: translateX(-48%) rotate(-3deg);
-            }
-
-            75% {
-                transform: translateX(-52%) rotate(3deg);
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            40%,
-            100% {
-                opacity: 1;
-                transform: translateX(-50%) scale(1);
-            }
-
-            20%,
-            60% {
-                opacity: 0.3;
-                transform: translateX(-50%) scale(1.1);
-            }
-        }
-
-        .effect-text {
-            position: absolute;
-            font-size: 3em;
-            font-weight: bold;
-            animation: explode 1.5s ease-out infinite;
-            pointer-events: none;
-        }
-
-        .effect-text:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            color: #ff00ff;
-            animation-delay: 0s;
-        }
-
-        .effect-text:nth-child(2) {
-            top: 25%;
-            right: 10%;
-            color: #00ffff;
-            animation-delay: 0.3s;
-        }
-
-        .effect-text:nth-child(3) {
-            bottom: 25%;
-            left: 15%;
-            color: #ffff00;
-            animation-delay: 0.6s;
-        }
-
-        .effect-text:nth-child(4) {
-            bottom: 30%;
-            right: 15%;
-            color: #00ff00;
-            animation-delay: 0.9s;
-        }
-
-        @keyframes explode {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.5) rotate(180deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(0) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .subtitle {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ffff00;
-            font-size: 1.2em;
-            text-shadow: 0 0 10px rgba(255, 255, 0, 1);
-            animation: slide 2s ease-in-out infinite;
-        }
-
-        @keyframes slide {
-
-            0%,
-            100% {
-                transform: translateX(-50%) translateX(-100px);
-                opacity: 0;
-            }
-
-            50% {
-                transform: translateX(-50%) translateX(100px);
-                opacity: 1;
-            }
-        }
-
-        .countdown {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 8em;
-            color: rgba(255, 255, 255, 0.1);
-            font-weight: bold;
-            animation: countPulse 1s infinite;
-            z-index: -1;
-        }
-
-        @keyframes countPulse {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.1;
-            }
-
-            50% {
-                transform: translate(-50%, -50%) scale(1.2);
-                opacity: 0.3;
-            }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <div class="stars" id="stars"></div>
+    <h1>BẢNG SO SÁNH GIỮA BÀI BÁO KHOA HỌC, CÔNG TRÌNH KHOA HỌC VÀ LUẬN VĂN</h1>
 
-    <h1 class="title">🌙 MẶT TRĂNG ĐỘNG ĐẤT 10 RICHTER 🌙</h1>
-    <div class="subtitle">⚡ BẢN NÂNG CẤP PRO MAX ULTRA PLUS ⚡</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu chí</th>
+                <th>Bài báo khoa học</th>
+                <th>Công trình nghiên cứu</th>
+                <th>Luận văn / Luận án</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mục đích</td>
+                <td>Công bố kết quả nghiên cứu mới, chia sẻ khám phá chuyên ngành.</td>
+                <td>Thực hiện dự án nghiên cứu toàn diện, có tài trợ và các giai đoạn rõ ràng.</td>
+                <td>Hoàn thành yêu cầu nghiên cứu cá nhân để nhận bằng (thạc sĩ, tiến sĩ).</td>
+            </tr>
+            <tr>
+                <td>Quy mô & thời gian</td>
+                <td>Nhỏ — tập trung vào một khía cạnh cụ thể, thời gian ngắn.</td>
+                <td>Lớn — nhiều giai đoạn, kéo dài vài năm.</td>
+                <td>Trung bình — trong khuôn khổ khóa học (6 tháng – 2 năm).</td>
+            </tr>
+            <tr>
+                <td>Số người thực hiện</td>
+                <td>Một nhóm nhỏ hoặc cá nhân.</td>
+                <td>Nhóm nghiên cứu có nhiều thành viên, thường liên ngành.</td>
+                <td>Một cá nhân, dưới sự hướng dẫn của giảng viên.</td>
+            </tr>
+            <tr>
+                <td>Công bố / đánh giá</td>
+                <td>Đăng trên tạp chí hoặc hội thảo, qua phản biện kín.</td>
+                <td>Báo cáo nghiệm thu, hội đồng đánh giá, có thể công bố bài báo từ kết quả.</td>
+                <td>Bảo vệ trước hội đồng, không nhất thiết công bố rộng rãi.</td>
+            </tr>
+            <tr>
+                <td>Đóng góp & ứng dụng</td>
+                <td>Phát hiện hoặc kiểm nghiệm mới ở phạm vi hẹp.</td>
+                <td>Có thể tạo ra sản phẩm, mô hình, giải pháp thực tiễn.</td>
+                <td>Ứng dụng ở phạm vi hẹp, bổ sung kiến thức chuyên ngành.</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <div class="effect-text">💥</div>
-    <div class="effect-text">⚡</div>
-    <div class="effect-text">🔥</div>
-    <div class="effect-text">💫</div>
+    <h2>📚 Ví dụ thực tế và trích dẫn</h2>
 
-    <div class="countdown" id="countdown">BOOM</div>
-
-    <div class="moon-container">
-        <div class="moon">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="moonGradient" cx="30%" cy="30%">
-                        <stop offset="0%" style="stop-color:#fffef0;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#f4e4c1;stop-opacity:1" />
-                    </radialGradient>
-                </defs>
-
-                <circle cx="100" cy="100" r="80" fill="url(#moonGradient)" />
-                <circle cx="130" cy="100" r="70" fill="#0a0e27" />
-
-                <!-- Shocked face -->
-                <circle cx="70" cy="85" r="8" fill="#000000" />
-                <circle cx="90" cy="85" r="8" fill="#000000" />
-                <ellipse cx="80" cy="105" rx="15" ry="20" fill="#000000" />
-
-                <!-- Sweat drops -->
-                <ellipse cx="60" cy="95" rx="4" ry="6" fill="#4da6ff" opacity="0.7">
-                    <animate attributeName="opacity" values="0.7;0;0.7" dur="0.5s" repeatCount="indefinite" />
-                </ellipse>
-            </svg>
-        </div>
+    <div class="example">
+        <b>Bài báo khoa học:</b> Nguyễn Thị Minh Hằng (2023), “Ứng dụng trí tuệ nhân tạo trong đánh giá năng lực học
+        sinh trung học phổ thông”,
+        <i>Tạp chí Giáo dục</i>, số đặc biệt tháng 6/2023. <br>
+        🔗 <a href="https://tcgd.tapchigiaoduc.edu.vn/index.php/tapchi/article/download/1863/793/1142"
+            target="_blank">Xem tại Tạp chí Giáo dục</a>
     </div>
 
-    <div class="warning">
-        🚨 KHẨN CẤP: MẶT TRĂNG SẮP TÉ XUỐNG ĐẤT RỒI! 🚨
+    <div class="example">
+        <b>Công trình nghiên cứu:</b> Đề tài cấp Bộ (B2022-ĐHQG-05), “Phát triển hệ thống học tập cá nhân hóa dựa trên
+        trí tuệ nhân tạo cho sinh viên đại học”,
+        Chủ nhiệm: TS. Trần Văn Phúc, Đại học Quốc gia TP.HCM. <br>
+        🔗 <a
+            href="https://daotao.neu.edu.vn/Resources/Docs/SubDomain/daotao/CDR/10-TS-NguyenDangKhoa-NguyenQuocHung.pdf"
+            target="_blank">Xem chi tiết tại NEU</a>
     </div>
 
-    <script>
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 200; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const size = Math.random() * 4 + 1;
-            star.style.width = size + 'px';
-            star.style.height = size + 'px';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = -10 + '%';
-            star.style.animationDelay = Math.random() * 8 + 's';
-            star.style.animationDuration = (Math.random() * 5 + 8) + 's';
-            starsContainer.appendChild(star);
-        }
+    <div class="example">
+        <b>Luận văn khoa học:</b> Lê Quang Minh (2021), “Xây dựng mô hình chatbot hỗ trợ học sinh ôn luyện môn Toán THPT
+        sử dụng kỹ thuật NLP”,
+        Luận văn Thạc sĩ, Trường Đại học Bách Khoa Hà Nội. <br>
+        🔗 <a
+            href="https://sinhvien.dinhtienminh.net/wp-content/uploads/2025/01/de-an-chuyen-nganh-kinh-doanh-quoc-te-1.pdf"
+            target="_blank">Tải luận văn tại ĐH Kinh tế TP.HCM</a>
+    </div>
 
-        // Random countdown text
-        const countdownTexts = ['BOOM', 'BANG', 'POW', 'CRASH', 'KABOOM', 'ZAP'];
-        const countdownEl = document.getElementById('countdown');
-
-        setInterval(() => {
-            countdownEl.textContent = countdownTexts[Math.floor(Math.random() * countdownTexts.length)];
-        }, 1000);
-
-        // Screen shake effect
-        let shakeInterval = setInterval(() => {
-            document.body.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-        }, 50);
-    </script>
 </body>
 
 </html>
